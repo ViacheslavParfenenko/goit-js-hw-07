@@ -24,3 +24,45 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const gallery = document.createElement('ul');
+    gallery.classList.add('gallery');
+
+    const galleryItems = images.map(({ url, alt }) => {
+      const li = document.createElement('li');
+      li.classList.add('gallery-item');
+      
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = alt;
+      
+      li.appendChild(img);
+      return li;
+    });
+
+
+    gallery.append(...galleryItems);
+
+    document.body.appendChild(gallery);
+    
+      const style = document.createElement('style');
+      style.textContent = `
+        .gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .gallery-item {
+          flex: 1 1 calc(33.333% - 10px);
+          box-sizing: border-box;
+        }
+        .gallery-item img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      `;
+      document.head.appendChild(style);
