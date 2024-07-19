@@ -13,7 +13,8 @@ categoriesItems.forEach(category => {
 
 const style = document.createElement('style');
 style.textContent = `
-  .categories {
+    .categories {
+    
     display: flex;
     flex-wrap:;
     gap: 10px;
@@ -23,8 +24,11 @@ style.textContent = `
     margin: 0;
   }
   .item {
+
     flex: 1 1 calc(33.333% - 10px);
     box-sizing: border-box;
+   
+
   }
 
   }
